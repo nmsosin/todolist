@@ -16,7 +16,7 @@
 
 * CRA
 * TS
-* MUI
+* Material UI
 
 **Ссылка на проект**
 

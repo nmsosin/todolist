@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useState} from "react";
+import {TextField} from "@mui/material";
 
 type EditableTitlePropsType = {
     title: string,
@@ -21,6 +22,12 @@ export function EditableTitle(props: EditableTitlePropsType) {
     const onChangeTitleHandler = (e: ChangeEvent<HTMLInputElement>) => setTitle(e.currentTarget.value)
 
     return editMode
-        ? <input value={title} onChange={onChangeTitleHandler} onBlur={activateViewMode} autoFocus></input>
+        ? <TextField
+            variant="standard"
+            value={title}
+            onChange={onChangeTitleHandler}
+            onBlur={activateViewMode}
+            autoFocus
+        />
         : <span onDoubleClick={activateEditMode} >{props.title}</span>
 }
