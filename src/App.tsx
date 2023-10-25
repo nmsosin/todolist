@@ -65,7 +65,6 @@ function App() {
     let newTasks = [newTask, ...currentTasks];
     tasks[todolistId] = newTasks;
 
-
     setTasks({...tasks});
   }
 
@@ -151,7 +150,7 @@ function App() {
                 activeTasks = activeTasks.filter(t => t.isDone === false)
               }
 
-              return <Grid item>
+              return <Grid item key={tl.id}>
                 <Paper style={{ padding: '10px'}}>
                   <TodoList
                     key={tl.id}
